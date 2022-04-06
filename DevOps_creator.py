@@ -26,7 +26,7 @@ while True:
         print(name_proj)
         fld = values['-FOLDER-'] # Получаем информацию с блока выбора папки
         os.chdir(fld) # Меняем директорию для сохранения
-        add_folder_in_project(name_proj)
+        add_folder_in_project(name_proj, values)
         break
     if event == sg.WIN_CLOSED:
         break

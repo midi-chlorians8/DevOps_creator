@@ -1,9 +1,6 @@
 import os
 
 # Функция проверяет не создана ли уже папка чтобы не бить ошибки
-from DevOps_creator import values
-
-
 def create_dir(dir):
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -12,18 +9,15 @@ def create_dir(dir):
         print("Directory already existed : ", dir)
     return dir
 
-
-# Функция проверяет не создана ли уже папка чтобы не бить ошибки
-
-name = 'proj'
+#################################################################
 
 
-def add_folder_in_project(main_folder_name):
+def add_folder_in_project(main_folder_name, values):
     create_dir(main_folder_name)
 
     root_path = main_folder_name + '/'
 
-    if export_values["-CREDS-"] == True:
+    if values['-CREDS-'] == True:
         create_dir(root_path + "Creds")
         f = open(root_path + "Creds/AWS.txt", "x")
         f.write("My AWS account in project\n")
@@ -35,28 +29,28 @@ def add_folder_in_project(main_folder_name):
         f.write("Creds DB Prod:\n\n\n")
         f.close()
 
-    if export_values["-IMAGES-"] == True:
+    if values["-IMAGES-"] == True:
         create_dir(root_path + "Images")
         create_dir(root_path + "Images/Diagrams")
         create_dir(root_path + "Images/Screens")
         create_dir(root_path + "Images/Other")
 
-    if export_values["-VIDEOS-"] == True:
+    if values["-VIDEOS-"] == True:
         create_dir(root_path + "Videos")
         create_dir(root_path + "Videos/Backend_side")
         create_dir(root_path + "Videos/Front_end_side")
         create_dir(root_path + "Videos/Other")
 
-    if export_values["-K8S-"] == True:
+    if values["-K8S-"] == True:
         create_dir(root_path + "K8s")
 
-    if export_values["-TERRAFORM-"] == True:
+    if values["-TERRAFORM-"] == True:
         create_dir(root_path + "Terraform")
 
-    if export_values["-CDK-"] == True:
+    if values["-CDK-"] == True:
         create_dir(root_path + "CDK")
 
-    if export_values["-PROPOSAL-"] == True:
+    if values["-PROPOSAL-"] == True:
         create_dir(root_path + "Proposal")
         f = open(root_path + "Proposal/Description.txt", "x")
         f.write("Description:\n")
