@@ -46,6 +46,8 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-TERRAFORM-"] == True:
         create_dir(root_path + "Terraform")
+        create_dir(root_path + "Terraform/Polygon")
+        create_dir(root_path + "Terraform/Work_Version")
 
     if values["-CDK-"] == True:
         create_dir(root_path + "CDK")
