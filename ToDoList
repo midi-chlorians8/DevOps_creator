@@ -7,3 +7,4 @@ Done✓: При нажатии Enter cоздание проекта
 
 
 Добавить папку Monitorings и в ней файл creds и там grafana: первой строкой
+Надо папка DataBases с текст доком Creds и подпапкой backups
