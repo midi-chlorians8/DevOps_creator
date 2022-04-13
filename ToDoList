@@ -3,3 +3,7 @@ Done✓: При нажатии Enter cоздание проекта
        https://stackoverflow.com/questions/68528274/how-to-raise-an-event-when-enter-is-pressed-into-an-inputtext-in-pysimplegui
 
        В папке терраформ нужны подпапки Polygon и Work_Version
+
+
+
+Добавить папку Monitorings и в ней файл creds и там grafana:
