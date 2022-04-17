@@ -26,9 +26,9 @@ def add_folder_in_project(main_folder_name, values):
         f = open(root_path + "Creds/"+main_folder_name+"_"+"AWS_Creds.txt", "x")
         f.write("My AWS account in project\n\n")
 
-        f.write("Account ID:\n")
-        f.write("IAM user:\n")
-        f.write("password:\n\n\n")
+        f.write("Account ID: \n")
+        f.write("IAM user: \n")
+        f.write("password: \n\n\n")
 
         f.write("export AWS_ACCESS_KEY_ID=\n")
         f.write("export AWS_SECRET_ACCESS_KEY=\n")
@@ -51,6 +51,8 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-K8S-"] == True:
         create_dir(root_path + "K8s")
+        create_dir(root_path + "K8s/HelmChart")
+
 
     if values["-TERRAFORM-"] == True:
         create_dir(root_path + "Terraform")
