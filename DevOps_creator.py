@@ -11,9 +11,10 @@ layout = [
      sg.Checkbox('Terraform', default=True, key="-TERRAFORM-"),
      sg.Checkbox('Monitorings', default=True, key="-MONITORINGS-"),
      sg.Checkbox('Proposal', default=True, key="-PROPOSAL-"),
-     sg.Checkbox('Images', default=True, key="-IMAGES-"),
+     sg.Checkbox('DataBases', default=True, key="-DATABASES-"),
+     sg.Checkbox('Images', default=False, key="-IMAGES-"),
      sg.Checkbox('Videos', default=True, key="-VIDEOS-"),
-     sg.Checkbox('CDK', default=True, key="-CDK-"),
+     sg.Checkbox('CDK', default=False, key="-CDK-"),
 
      ],
 ]
