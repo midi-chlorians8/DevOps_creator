@@ -35,6 +35,11 @@ def add_folder_in_project(main_folder_name, values):
         f.write("export AWS_DEFAULT_REGION=\n")
         f.close()
 
+        f = open(root_path + "Creds/" + main_folder_name + "_" + "System_Control_Version_Creds.txt", "x")
+        f.write("Url:\n\n")
+        f.write("Login:\n")
+        f.write("Password:\n")
+
         create_dir(root_path + "Creds/instance_keys")
 
     if values["-IMAGES-"] == True:
