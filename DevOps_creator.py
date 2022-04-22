@@ -1,6 +1,8 @@
 from folder_add import *
 import PySimpleGUI as sg
 
+sg.theme('DarkGrey13')   # Keep things interesting for your users
+
 layout = [
     [sg.Text("Название проекта:"), sg.Input(k='expr')],
     [sg.Text("        Выбор папки:"), sg.In(enable_events=True, key='-FOLDER-'), sg.FolderBrowse()],
@@ -10,10 +12,11 @@ layout = [
      sg.Checkbox('K8s', default=True, key="-K8S-"),
      sg.Checkbox('Terraform', default=True, key="-TERRAFORM-"),
      sg.Checkbox('Monitorings', default=True, key="-MONITORINGS-"),
-     sg.Checkbox('Proposal', default=True, key="-PROPOSAL-"),
-     sg.Checkbox('Images', default=True, key="-IMAGES-"),
+     sg.Checkbox('Description', default=True, key="-DESCRIPTION-"),
+     sg.Checkbox('DataBases', default=True, key="-DATABASES-"),
+     sg.Checkbox('Images', default=False, key="-IMAGES-"),
      sg.Checkbox('Videos', default=True, key="-VIDEOS-"),
-     sg.Checkbox('CDK', default=True, key="-CDK-"),
+     sg.Checkbox('CDK', default=False, key="-CDK-"),
 
      ],
 ]
