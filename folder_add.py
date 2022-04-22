@@ -51,13 +51,29 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-K8S-"] == True:
         create_dir(root_path + "K8s")
-        create_dir(root_path + "K8s/HelmChart")
+        f = open(root_path + "K8s/" + main_folder_name + "_" + "Focus_to_K8s_clusters.txt", "x")
+        f.write("export AWS_ACCESS_KEY_ID=\n")
+        f.write("export AWS_SECRET_ACCESS_KEY=\n")
+        f.write("export AWS_DEFAULT_REGION=\n\n")
+
+
+        f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n")
+        f.write("Dev\n\n")
+
+        f.write("Qa:\n")
+        f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n\n")
+
+        f.write("Prod:\n")
+        f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n\n")
+
+        create_dir(root_path + "K8s/HelmCharts")
 
 
     if values["-TERRAFORM-"] == True:
         create_dir(root_path + "Terraform")
-        create_dir(root_path + "Terraform/Polygon")
-        create_dir(root_path + "Terraform/Work_Version")
+        create_dir(root_path + "Terraform/Terraform_Polygon")
+        create_dir(root_path + "Terraform/Terraform_Work_Version")
+        create_dir(root_path + "Terraform/Terragrunt")
 
     if values["-MONITORINGS-"] == True:
         create_dir(root_path + "Monitorings")
@@ -85,9 +101,19 @@ def add_folder_in_project(main_folder_name, values):
     if values["-CDK-"] == True:
         create_dir(root_path + "CDK")
 
-    if values["-PROPOSAL-"] == True:
-        create_dir(root_path + "Proposal")
-        f = open(root_path + "Proposal/Description.txt", "x")
+    if values["-DESCRIPTION-"] == True:
+        create_dir(root_path + "Description")
+        f = open(root_path + "Description/"+main_folder_name+"_"+"Proposal.txt", "x")
+        f.write("Proposal:\n")
+        f.close()
+
+        f = open(root_path + "Description/"+main_folder_name+"_"+"ToDoList.txt", "x")
+        f.write("1) \n")
+        f.write("2) \n")
+        f.write("3) \n")
+        f.close()
+
+        f = open(root_path + "Description/" + main_folder_name + "_" + "Description_proj.txt", "x")
         f.write("Description:\n")
         f.close()
 

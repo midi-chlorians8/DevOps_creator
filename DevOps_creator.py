@@ -10,7 +10,7 @@ layout = [
      sg.Checkbox('K8s', default=True, key="-K8S-"),
      sg.Checkbox('Terraform', default=True, key="-TERRAFORM-"),
      sg.Checkbox('Monitorings', default=True, key="-MONITORINGS-"),
-     sg.Checkbox('Proposal', default=True, key="-PROPOSAL-"),
+     sg.Checkbox('Description', default=True, key="-DESCRIPTION-"),
      sg.Checkbox('DataBases', default=True, key="-DATABASES-"),
      sg.Checkbox('Images', default=False, key="-IMAGES-"),
      sg.Checkbox('Videos', default=True, key="-VIDEOS-"),

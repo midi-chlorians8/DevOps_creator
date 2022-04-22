@@ -10,3 +10,4 @@ pyinstaller -F -w -i "C:\DevOps_create_new_project\icon.ico" DevOps_creator.py
 
 
 pip install pypiwin32
+
