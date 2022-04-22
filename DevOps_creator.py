@@ -1,7 +1,7 @@
 from folder_add import *
 import PySimpleGUI as sg
 
-sg.theme('DarkAmber')    # Keep things interesting for your users
+sg.theme('DarkGrey13')   # Keep things interesting for your users
 
 layout = [
     [sg.Text("Название проекта:"), sg.Input(k='expr')],
