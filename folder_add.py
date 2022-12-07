@@ -1,7 +1,9 @@
 #from test import *
 
 import os, sys
-import winshell
+import platform
+if platform.system() == "Windows":
+    import winshell
 
 
 # Функция проверяет не создана ли уже папка чтобы не бить ошибки
@@ -157,10 +159,11 @@ def add_folder_in_project(main_folder_name, values):
 # Crete link to db creds:
     #print( os.path.join(  os.path.dirname(os.path.realpath(__file__)), "p52", "Creds", "DataBases_Creds.lnk") )
     #"""
-    winshell.CreateShortcut(
+    if platform.system() == "Windows":
+        winshell.CreateShortcut(
         Path= os.path.join( os.getcwd(), main_folder_name,"Creds", "DataBases_Creds.lnk"),  #os.path.join(    os.path.dirname(os.path.realpath(__file__))    , "c1", "Creds", "DataBases_Creds.lnk"),
         Target=os.path.join(os.getcwd(), main_folder_name, "DataBases",  main_folder_name + "_" + "DataBaseCreds.txt"),
         #Icon=(r"c:\python\python.exe", 0),
         Description="Python Interpreter"
-    )
+        )
     #"""
