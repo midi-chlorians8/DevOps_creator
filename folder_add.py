@@ -2,6 +2,7 @@
 
 import os, sys
 import platform
+import datetime
 if platform.system() == "Windows":
     import winshell
 
@@ -41,6 +42,27 @@ def add_folder_in_project(main_folder_name, values):
         f.write("Url:\n\n")
         f.write("Login:\n")
         f.write("Password:\n")
+
+        f = open(root_path + "Creds/" + main_folder_name + "_" + "Creds_Monitorings.txt", "x")
+        f.write("My Monitorings in project :\n\n")
+        f.write("Creds Grafana:\n")
+
+        f.write("Dev\n")
+        f.write("URL:\n")
+        f.write("Login:\n")
+        f.write("Password:\n\n")
+
+        f.write("Qa\n")
+        f.write("URL:\n")
+        f.write("Login:\n")
+        f.write("Password:\n\n")
+
+        f.write("Prod\n")
+        f.write("URL:\n")
+        f.write("Login:\n")
+        f.write("Password:\n\n")
+
+        f.close()
 
         create_dir(root_path + "Creds/instance_keys")
 
@@ -84,25 +106,9 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-MONITORINGS-"] == True:
         create_dir(root_path + "Monitorings")
-        f = open(root_path + "Monitorings/"+main_folder_name+"_"+"Creds_Monitorings.txt", "x")
-        f.write("My Monitorings in project creds:\n\n")
-        f.write("Creds Grafana:\n")
-
-        f.write("Dev\n")
-        f.write("URL:\n")
-        f.write("Login:\n")
-        f.write("Password:\n\n")
-
-        f.write("Qa\n")
-        f.write("URL:\n")
-        f.write("Login:\n")
-        f.write("Password:\n\n")
-
-        f.write("Prod\n")
-        f.write("URL:\n")
-        f.write("Login:\n")
-        f.write("Password:\n\n")
-
+        f = open(root_path + "Monitorings/"+main_folder_name+"_"+"Description_Monitorings.txt", "x")
+        f.write(f"Created date: {datetime.date.today()}\n")
+        f.write("My Monitorings in project :\n\n")
         f.close()
 
     if values["-CDK-"] == True:
