@@ -173,3 +173,10 @@ def add_folder_in_project(main_folder_name, values):
         Description="Python Interpreter"
         )
     #"""
+    elif platform.system() == "Linux":
+        # create link on db
+        print('Linux platform - create link to DB creds')
+        os.system('ln -s {0} {1}'.format(os.path.join(os.getcwd(), main_folder_name, "DataBases",  main_folder_name + "_" + "DataBaseCreds.txt"),os.path.join( \
+            os.getcwd(), main_folder_name,"Creds", "DataBases_Creds")))
+    else:
+        pass
