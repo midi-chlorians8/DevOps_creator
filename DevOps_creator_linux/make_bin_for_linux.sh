@@ -24,11 +24,23 @@ pip install -r requirements.txt && pip freeze
 
 # create bin
 PATH_folder_add="../DevOps_creator.py"
-PATH_icon="../icon.ico"
-pyinstaller --onefile --windowed --icon $PATH_icon $PATH_folder_add 
+
+# for set on *.desktop
+PATH_icon="icon.png"
+
+pyinstaller --onefile --windowed $PATH_folder_add
+
+# dir for icon
+if [[ -z $HOME/Documents/DevOps_creator_icons/ ]] ; then
+    mkdir $HOME/Documents/DevOps_creator_icons/
+fi
+cp ./$PATH_icon $HOME/Documents/DevOps_creator_icons/
 
 # bin
-mv ./dist/DevOps_creator ../DevOps_creator.bin
+sudo mv ./dist/DevOps_creator /usr/bin/DevOps_creator.bin
+chmod +x /usr/bin/DevOps_creator.bin
+cp DevOps_creator.desktop $HOME/Desktop/DevOps_creator.desktop
+chmod +x $HOME/Desktop/DevOps_creator.desktop
 
 # clear
 rm -rf build/ DevOps_creator.spec dist/ 

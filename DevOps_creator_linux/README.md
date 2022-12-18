@@ -25,7 +25,7 @@
 ### make_bin_for_linux.sh need
     - requirements.txt (PyInstaller, PySimpleGUI)
     - PATH_folder_add="../DevOps_creator.py"
-    - PATH_icon="../icon.ico"
+    - PATH_icon="icon.png"
     - PATH_env="./venv"
 
     !!! for make_bin_for_linux.sh need - put with folder DevOps_creator
@@ -33,3 +33,8 @@
 ## STEP 3.2
 ### start script for build 
 sudo chmod +x make_bin_for_linux.sh && bash make_bin_for_linux.sh
+
+## STEP 4 
+### set icon to program
+    - edit file $HOME/Desktop/DevOps_creator.desktop 
+    - add Icon=<YOUR_HOME_FOLDER>/Documents/DevOps_creator_icons/icon.png

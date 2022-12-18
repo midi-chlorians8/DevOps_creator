@@ -1,0 +1,19 @@
+[Desktop Entry]
+Type=Application
+Encoding=UTF-8
+Name=DevOps_creator.bin
+
+# icon 
+Icon=home_folder/Documents/DevOps_creator_icons/icon.png
+
+# path start
+Exec=DevOps_creator.bin %U
+TryExec=DevOps_creator.bin
+
+Terminal=false
+StartupWMClass=DevOps_creator
+# Optional categories
+Categories=Development;Education;
+
+[Desktop Action Manager]
+Exec=DevOps_creator.bin
