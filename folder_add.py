@@ -111,6 +111,21 @@ def add_folder_in_project(main_folder_name, values):
         f.write("My Monitorings in project :\n\n")
         f.close()
 
+        f = open(root_path + "Monitorings/"+main_folder_name+"_"+"Alarms_list.txt", "x")
+        f.write(f"Created date: {datetime.date.today()}\n")
+        f.write("Alarms_list:\n")
+        f.write(" ===== Dev ===== \n")
+        f.write(" 1) Db-dev CPU alarm \n")
+        f.write(" 2) K8s can not autoscale \n")
+        f.write(" ===== Dev ===== \n\n")
+        f.write(" ===== Qa ===== \n")
+        f.write(" ===== Qa ===== \n\n")
+        f.write(" ===== Stage ===== \n")
+        f.write(" ===== Stage ===== \n\n")
+        f.write(" ===== Prod ===== \n")
+        f.write(" ===== Prod ===== \n\n")
+        f.close()
+
     if values["-CDK-"] == True:
         create_dir(root_path + "CDK")
 
@@ -161,6 +176,21 @@ def add_folder_in_project(main_folder_name, values):
         f.close()
 
         create_dir(root_path + "DataBases/Backups")
+
+        f = open(root_path + "DataBases/"+main_folder_name+"_"+"Description_backups.txt", "x")
+        f.write(f"Created date: {datetime.date.today()}\n")
+        f.write("Description our backups:\n")
+        f.write(" ===== Dev ===== \n")
+        f.write(" 1) Db-dev in AWS \n")
+        f.write(" 2) Pg dumps on bastion dev (check that) \n")
+        f.write(" ===== Dev ===== \n\n")
+        f.write(" ===== Qa ===== \n")
+        f.write(" ===== Qa ===== \n\n")
+        f.write(" ===== Stage ===== \n")
+        f.write(" ===== Stage ===== \n\n")
+        f.write(" ===== Prod ===== \n")
+        f.write(" ===== Prod ===== \n\n")
+        f.close()
 
 # Crete link to db creds:
     #print( os.path.join(  os.path.dirname(os.path.realpath(__file__)), "p52", "Creds", "DataBases_Creds.lnk") )
