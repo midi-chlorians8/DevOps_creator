@@ -22,6 +22,9 @@ def create_dir(dir):
 def add_folder_in_project(main_folder_name, values):
     create_dir(main_folder_name)
 
+    today = datetime.date.today()
+    formatted_date = today.strftime("%d-%m-%Y")
+
     root_path = main_folder_name + '/'
 
     if values['-CREDS-'] == True:
@@ -107,12 +110,12 @@ def add_folder_in_project(main_folder_name, values):
     if values["-MONITORINGS-"] == True:
         create_dir(root_path + "Monitorings")
         f = open(root_path + "Monitorings/"+main_folder_name+"_"+"Description_Monitorings.txt", "x")
-        f.write(f"Created date: {datetime.date.today()}\n")
+        f.write(f"Created date: {formatted_date}\n")
         f.write("My Monitorings in project :\n\n")
         f.close()
 
         f = open(root_path + "Monitorings/"+main_folder_name+"_"+"Alarms_list.txt", "x")
-        f.write(f"Created date: {datetime.date.today()}\n")
+        f.write(f"Created date: {formatted_date}\n")
         f.write("Alarms_list:\n")
         f.write(" ===== Dev ===== \n")
         f.write(" 1) Db-dev CPU alarm \n")
@@ -178,12 +181,12 @@ def add_folder_in_project(main_folder_name, values):
         create_dir(root_path + "DataBases/Backups")
 
         f = open(root_path + "DataBases/"+main_folder_name+"_"+"Description_backups.txt", "x")
-        f.write(f"Created date: {datetime.date.today()}\n")
-        f.write("Description our backups:\n")
-        f.write(" ===== Dev ===== \n")
+        f.write(f"Created date: {formatted_date}\n\n")
+        f.write("Description our backups:\n\n")
+        f.write(" ===== Dev ===== \n\n")
         f.write(" 1) Db-dev in AWS \n")
         f.write(" 2) Pg dumps on bastion dev (check that) \n")
-        f.write(" ===== Dev ===== \n\n")
+        f.write(" \n===== Dev ===== \n\n")
         f.write(" ===== Qa ===== \n")
         f.write(" ===== Qa ===== \n\n")
         f.write(" ===== Stage ===== \n")
@@ -192,9 +195,12 @@ def add_folder_in_project(main_folder_name, values):
         f.write(" ===== Prod ===== \n\n")
         f.close()
 
-# Crete link to db creds:
-    #print( os.path.join(  os.path.dirname(os.path.realpath(__file__)), "p52", "Creds", "DataBases_Creds.lnk") )
-    #"""
+        f = open(root_path + "Log_process.txt", "x")
+        f.write("Description what I do every day:\n\n")
+        f.write(f"{formatted_date}\n")
+        f.close()
+
+
     if platform.system() == "Windows":
         winshell.CreateShortcut(
         Path= os.path.join( os.getcwd(), main_folder_name,"Creds", "DataBases_Creds.lnk"),  #os.path.join(    os.path.dirname(os.path.realpath(__file__))    , "c1", "Creds", "DataBases_Creds.lnk"),
