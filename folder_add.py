@@ -83,20 +83,27 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-K8S-"] == True:
         create_dir(root_path + "K8s")
-        f = open(root_path + "K8s/" + main_folder_name + "_" + "Focus_to_K8s_clusters.txt", "x")
-        f.write("export AWS_ACCESS_KEY_ID=\n")
-        f.write("export AWS_SECRET_ACCESS_KEY=\n")
-        f.write("export AWS_DEFAULT_REGION=\n\n")
+
+        with open("Text_hints_files/Kubernetes_commands.txt", "r") as f:
+            content = f.read()
+
+        with open(root_path + "K8s/"  + "Kubernetes_commands.txt", "w") as f:
+            f.write(content)
+
+        # f = open(root_path + "K8s/" + main_folder_name + "_" + "Focus_to_K8s_clusters.txt", "x")
+        # f.write("export AWS_ACCESS_KEY_ID=\n")
+        # f.write("export AWS_SECRET_ACCESS_KEY=\n")
+        # f.write("export AWS_DEFAULT_REGION=\n\n")
 
 
-        f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n")
-        f.write("Dev\n\n")
+        # f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n")
+        # f.write("Dev\n\n")
 
-        f.write("Qa:\n")
-        f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n\n")
+        # f.write("Qa:\n")
+        # f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n\n")
 
-        f.write("Prod:\n")
-        f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n\n")
+        # f.write("Prod:\n")
+        # f.write("aws eks --region <region> update-kubeconfig --name <cluster_name>\n\n")
 
         create_dir(root_path + "K8s/HelmCharts")
 
@@ -106,9 +113,15 @@ def add_folder_in_project(main_folder_name, values):
         create_dir(root_path + "Terraform/Terraform_Polygon")
         create_dir(root_path + "Terraform/Terraform_Work_Version")
         create_dir(root_path + "Terraform/Terragrunt")
+        
+        # f = open(root_path + "Terraform/" + main_folder_name + "_" + "Terraform_commands.txt", "x")
+        # f.write("Вот список основных команд Terraform, которые вы можете использовать:\n\n**Основные команды:**\n1. `init` - Подготовьте рабочий каталог для других команд.\n2. `validate` - Проверьте, является ли конфигурация действительной.\n3. `plan` - Показать изменения, требуемые текущей конфигурацией.\n4. `apply` - Создать или обновить инфраструктуру.\n5. `destroy` - Уничтожить ранее созданную инфраструктуру.\n\n**Все остальные команды:**\n1. `console` - Попробуйте выражения Terraform в интерактивном командном интерфейсе.\n2. `fmt` - Отформатируйте вашу конфигурацию в стандартном стиле.\n3. `force-unlock` - Снять застрявшую блокировку на текущем рабочем пространстве.\n4. `get` - Установите или обновите удаленные модули Terraform.\n5. `graph` - Сгенерируйте график Graphviz шагов в операции.\n6. `import` - Свяжите существующую инфраструктуру с ресурсом Terraform.\n7. `login` - Получите и сохраните учетные данные для удаленного хоста.\n8. `logout` - Удалите локально сохраненные учетные данные для удаленного хоста.\n9. `metadata` - Команды, связанные с метаданными.\n10. `output` - Показать значения вывода из вашего корневого модуля.\n11. `providers` - Показать поставщиков, требуемых для этой конфигурации.\n12. `refresh` - Обновите состояние, чтобы соответствовать удаленным системам.\n13. `show` - Показать текущее состояние или сохраненный план.\n14. `state` - Расширенное управление состоянием.\n15. `taint` - Пометьте экземпляр ресурса как не полностью функциональный.\n16. `untaint` - Удалите состояние \"загрязненности\" из экземпляра ресурса.\n17. `version` - Показать текущую версию Terraform.\n18. `workspace` - Управление рабочим пространством.\n\n**Глобальные опции (используйте их перед подкомандой, если таковая имеется):**\n1. `-chdir=DIR` - Переключитесь на другой рабочий каталог перед выполнением данной подкоманды.\n2. `-help` - Показать этот вывод справки или справку для указанной подкоманды.")
 
-        f = open(root_path + "Terraform/" + main_folder_name + "_" + "Terraform_commands.txt", "x")
-        f.write("Вот список основных команд Terraform, которые вы можете использовать:\n\n**Основные команды:**\n1. `init` - Подготовьте рабочий каталог для других команд.\n2. `validate` - Проверьте, является ли конфигурация действительной.\n3. `plan` - Показать изменения, требуемые текущей конфигурацией.\n4. `apply` - Создать или обновить инфраструктуру.\n5. `destroy` - Уничтожить ранее созданную инфраструктуру.\n\n**Все остальные команды:**\n1. `console` - Попробуйте выражения Terraform в интерактивном командном интерфейсе.\n2. `fmt` - Отформатируйте вашу конфигурацию в стандартном стиле.\n3. `force-unlock` - Снять застрявшую блокировку на текущем рабочем пространстве.\n4. `get` - Установите или обновите удаленные модули Terraform.\n5. `graph` - Сгенерируйте график Graphviz шагов в операции.\n6. `import` - Свяжите существующую инфраструктуру с ресурсом Terraform.\n7. `login` - Получите и сохраните учетные данные для удаленного хоста.\n8. `logout` - Удалите локально сохраненные учетные данные для удаленного хоста.\n9. `metadata` - Команды, связанные с метаданными.\n10. `output` - Показать значения вывода из вашего корневого модуля.\n11. `providers` - Показать поставщиков, требуемых для этой конфигурации.\n12. `refresh` - Обновите состояние, чтобы соответствовать удаленным системам.\n13. `show` - Показать текущее состояние или сохраненный план.\n14. `state` - Расширенное управление состоянием.\n15. `taint` - Пометьте экземпляр ресурса как не полностью функциональный.\n16. `untaint` - Удалите состояние \"загрязненности\" из экземпляра ресурса.\n17. `version` - Показать текущую версию Terraform.\n18. `workspace` - Управление рабочим пространством.\n\n**Глобальные опции (используйте их перед подкомандой, если таковая имеется):**\n1. `-chdir=DIR` - Переключитесь на другой рабочий каталог перед выполнением данной подкоманды.\n2. `-help` - Показать этот вывод справки или справку для указанной подкоманды.")
+        with open("Text_hints_files/Terraform_commands.txt", "r") as f:
+            content = f.read()
+
+        with open(root_path + "Terraform/"  + "Terraform_commands.txt", "w") as f:
+            f.write(content)
 
     if values["-MONITORINGS-"] == True:
         create_dir(root_path + "Monitorings")
@@ -132,9 +145,59 @@ def add_folder_in_project(main_folder_name, values):
         f.write(" ===== Prod ===== \n\n")
         f.close()
 
-    if values["-CDK-"] == True:
-        create_dir(root_path + "CDK")
+    # if values["-CDK-"] == True:
+    #     create_dir(root_path + "CDK")
+    if values["-SOURCECODE-"] == True:
+        create_dir(root_path + "SourceCode/App")
 
+        with open("Text_hints_files/SourceCode/requirements.txt", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/App/"  + "requirements.txt", "w") as f:
+            f.write(content)
+
+
+        with open("Text_hints_files/SourceCode/Dockerfile", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/App/"  + "Dockerfile", "w") as f:
+            f.write(content)
+
+
+        with open("Text_hints_files/SourceCode/.env_example", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/App/"  + ".env_example", "w") as f:
+            f.write(content)       
+
+        with open("Text_hints_files/SourceCode/main.py", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/App/"  + "main.py", "w") as f:
+            f.write(content)                 
+
+
+
+
+        with open("Text_hints_files/SourceCode/docker-compose.yaml", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/"  + "docker-compose.yaml", "w") as f:
+            f.write(content)     
+
+
+        with open("Text_hints_files/SourceCode/README.md", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/"  + "README.md", "w") as f:
+            f.write(content)
+                             
+
+        with open("Text_hints_files/SourceCode/.gitignore", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/"  + ".gitignore", "w") as f:
+            f.write(content)      
     if values["-DESCRIPTION-"] == True:
         create_dir(root_path + "Description")
         f = open(root_path + "Description/"+main_folder_name+"_"+"Proposal.txt", "x")
