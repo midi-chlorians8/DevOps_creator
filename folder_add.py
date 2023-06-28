@@ -186,6 +186,17 @@ def add_folder_in_project(main_folder_name, values):
             f.write(content)     
 
 
+
+        with open("Text_hints_files/DockerCompose_commands.txt", "r") as f:
+            content = f.read()
+
+        with open(root_path + "SourceCode/"  + "DockerCompose_commands.txt", "w") as f:
+            f.write(content)  
+
+
+
+
+
         with open("Text_hints_files/SourceCode/README.md", "r") as f:
             content = f.read()
 
@@ -197,11 +208,12 @@ def add_folder_in_project(main_folder_name, values):
             content = f.read()
 
         with open(root_path + "SourceCode/"  + ".gitignore", "w") as f:
-            f.write(content)      
+            f.write(content) 
+
     if values["-DESCRIPTION-"] == True:
         create_dir(root_path + "Description")
         f = open(root_path + "Description/"+main_folder_name+"_"+"Proposal.txt", "x")
-        f.write("Proposal:\n")
+        f.write("Proposal(TZ):\n")
         f.close()
 
         f = open(root_path + "Description/"+main_folder_name+"_"+"ToDoList.txt", "x")
