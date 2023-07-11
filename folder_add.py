@@ -148,32 +148,32 @@ def add_folder_in_project(main_folder_name, values):
     # if values["-CDK-"] == True:
     #     create_dir(root_path + "CDK")
     if values["-SOURCECODE-"] == True:
-        create_dir(root_path + "SourceCode/App")
+        create_dir(root_path + "SourceCode/application")
 
         with open("Text_hints_files/SourceCode/requirements.txt", "r") as f:
             content = f.read()
 
-        with open(root_path + "SourceCode/App/"  + "requirements.txt", "w") as f:
+        with open(root_path + "SourceCode/application/"  + "requirements.txt", "w") as f:
             f.write(content)
 
 
         with open("Text_hints_files/SourceCode/Dockerfile", "r") as f:
             content = f.read()
 
-        with open(root_path + "SourceCode/App/"  + "Dockerfile", "w") as f:
+        with open(root_path + "SourceCode/application/"  + "Dockerfile", "w") as f:
             f.write(content)
 
 
         with open("Text_hints_files/SourceCode/.env_example", "r") as f:
             content = f.read()
 
-        with open(root_path + "SourceCode/App/"  + ".env_example", "w") as f:
+        with open(root_path + "SourceCode/application/"  + ".env_example", "w") as f:
             f.write(content)       
 
         with open("Text_hints_files/SourceCode/main.py", "r") as f:
             content = f.read()
 
-        with open(root_path + "SourceCode/App/"  + "main.py", "w") as f:
+        with open(root_path + "SourceCode/"  + "main.py", "w") as f:
             f.write(content)                 
 
 
@@ -212,7 +212,7 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-DESCRIPTION-"] == True:
         create_dir(root_path + "Description")
-        f = open(root_path + "Description/"+main_folder_name+"_"+"Proposal.txt", "x")
+        f = open(root_path + "Description/"+main_folder_name+"_"+"Proposal(TZ).txt", "x")
         f.write("Proposal(TZ):\n")
         f.close()
 
