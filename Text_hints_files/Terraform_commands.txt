@@ -35,8 +35,9 @@ My highlight commands:
 terraform fmt
 terraform validate 
 terraform apply -auto-approve
+terraform apply -var-file="testing.tfvars" --auto-approve
 
-To find ubuntu image in AWS region
+To find ubuntu 22.04 image in AWS region
 Link:
 https://discourse.ubuntu.com/t/search-and-launch-ubuntu-22-04-in-aws-using-cli/27986
 
