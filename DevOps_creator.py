@@ -12,7 +12,7 @@ layout = [
     [sg.Text("Выбор папок под ваш проект:")],
     [sg.Checkbox('Creds', default=True, key="-CREDS-"),
      sg.Checkbox('DataBases', default=True, key="-DATABASES-"),
-     sg.Checkbox('SourceCode', default=True, key="-SOURCECODE-"),
+     sg.Checkbox('Repository', default=True, key="-REPOSITORY-"),
      sg.Checkbox('Terraform', default=False, key="-TERRAFORM-"),
      sg.Checkbox('K8s', default=False, key="-K8S-"),
      sg.Checkbox('Monitorings', default=True, key="-MONITORINGS-"),

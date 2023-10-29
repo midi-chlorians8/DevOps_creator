@@ -10,6 +10,13 @@ Cкачай себе DevOps_creator v0.4.exe
 =========================================
 
 Если хочешь добавить функционал и оттестить:
+```bash
+python3 -m venv myenv
+source myenv/bin/activate
+cd DevOps_creator_linux
+pip install -r requirements.txt
+cd ..
+```
 
   Зависимости:
   Надо будет либа PySimpleGUI ,
