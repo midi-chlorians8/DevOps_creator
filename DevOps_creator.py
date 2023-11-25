@@ -12,14 +12,14 @@ layout = [
     [sg.Text("Выбор папок под ваш проект:")],
     [sg.Checkbox('Creds', default=True, key="-CREDS-"),
      sg.Checkbox('DataBases', default=True, key="-DATABASES-"),
-     sg.Checkbox('Repository', default=True, key="-REPOSITORY-"),
      sg.Checkbox('Terraform', default=False, key="-TERRAFORM-"),
+     sg.Checkbox('Ansible', default=False, key="-ANSIBLE-"),
      sg.Checkbox('K8s', default=False, key="-K8S-"),
      sg.Checkbox('Monitorings', default=True, key="-MONITORINGS-"),
+     sg.Checkbox('Repository', default=True, key="-REPOSITORY-"),
      sg.Checkbox('Description', default=True, key="-DESCRIPTION-"),
-     sg.Checkbox('Images', default=False, key="-IMAGES-"),
-     sg.Checkbox('Videos', default=False, key="-VIDEOS-"),
-     #  sg.Checkbox('CDK', default=False, key="-CDK-"),
+    #  sg.Checkbox('Images', default=False, key="-IMAGES-"),
+    #  sg.Checkbox('Videos', default=False, key="-VIDEOS-"),
     ],
 ]
 

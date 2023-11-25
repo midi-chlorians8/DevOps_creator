@@ -3,7 +3,7 @@ Command	                Description
 
 
 docker compose up	    Create and start containers
-docker compose up -d	Create and start containers
+docker compose up -d	Create and start containers in background
 docker compose down	    Stop and remove containers, networks
 docker compose ps	    List containers
 docker compose logs	    View output from containers

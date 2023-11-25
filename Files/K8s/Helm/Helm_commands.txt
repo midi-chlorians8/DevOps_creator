@@ -1,0 +1,17 @@
+Install chart from local folder
+
+helm install my-loki-stack .
+helm install my-loki-stack . --namespace your-namespace
+helm upgrade --install --create-namespace  my-release . --namespace test
+
+helm upgrade --install --create-namespace my-release . --namespace test -f environments/dev/override-values.yaml
+
+
+
+=== use cases ===
+
+helm upgrade \
+    loki-stack --install --create-namespace --namespace monitoring -f environments/preprod/override-values.yaml \
+    .
+
+helm upgrade --install loki-stack . -f values.yaml -f environments/dev/override-values.yaml -n monitoring

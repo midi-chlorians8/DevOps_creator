@@ -1,0 +1,10 @@
+1) Make ssh-copy-id to remote server.
+    If use login password - sshpass -p <myPass> ssh-copy-id <myUser>@10.123.66.110
+    If use ssh key - INVESTIGATE
+
+2) Ping all servers.
+    ansible presto_cluster -i inventory -m ping
+
+3) Run playbook
+    ansible-playbook -i inventory playbook.yml
+    If use login password - you can see {"msg": "Missing sudo password"}. To resolve - add -K to the end command end type <myPass>

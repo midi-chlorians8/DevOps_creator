@@ -1,0 +1,3 @@
+helm install --namespace gitlab gitlab-runner-crs-platform -f values.yaml gitlab/gitlab-runner
+helm upgrade --namespace gitlab gitlab-runner-crs-platform -f values.yaml gitlab/gitlab-runner
+helm uninstall gitlab-runner-crs-platform --namespace gitlab

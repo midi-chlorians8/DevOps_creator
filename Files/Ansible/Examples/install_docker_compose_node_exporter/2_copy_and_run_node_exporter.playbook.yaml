@@ -1,0 +1,36 @@
+---
+- name: Copy node exporter files, custom metric files and run
+  hosts: all
+  become: true
+  tasks:
+
+  - name: Copy node_exporter.yaml to remote machine
+    ansible.builtin.copy:
+      src: ./files/node_exporter.yaml
+      dest: /opt/node_exporter.yaml
+      mode: '0644'
+
+  - name: Create textfile_collector directory on remote machine
+    ansible.builtin.file:
+      path: /opt/textfile_collector
+      state: directory
+      mode: '0755'
+
+  - name: Remove existing custom-metrics-hostname.prom file
+    ansible.builtin.file:
+      path: /opt/textfile_collector/custom-metrics-hostname.prom
+      state: absent
+
+  - name: Template custom-metrics-hostname.prom with actual hostname
+    ansible.builtin.template:
+      src: ./templates/custom-metrics-hostname.prom.j2
+      dest: /opt/textfile_collector/custom-metrics-hostname.prom
+      mode: '0644'
+
+  - name: Run docker-compose with node_exporter.yaml in detached mode
+    ansible.builtin.command:
+      cmd: docker compose -f /opt/node_exporter.yaml up -d
+    args:
+      chdir: /opt
+    register: compose_up
+    changed_when: "'Creating' in compose_up.stdout or 'Starting' in compose_up.stdout"

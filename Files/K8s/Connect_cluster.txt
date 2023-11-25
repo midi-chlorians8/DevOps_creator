@@ -1,0 +1,11 @@
+If you receive access to k8s cluster via file:
+
+export KUBECONFIG=~/Desktop/MyProj/Creds/config_dev_preprod_prod_kub/configdev
+export KUBECONFIG=~/Desktop/MyProj/Creds/config_dev_preprod_prod_kub/configpreprod
+export KUBECONFIG=~/Desktop/MyProj/Creds/config_dev_preprod_prod_kub/configprod
+
+To see and change context 
+
+kubectl config get-contexts
+kubectl config current-context
+kubectl config use-context kubernetes-admin@kubernetes
