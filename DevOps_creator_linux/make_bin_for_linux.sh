@@ -1,3 +1,6 @@
+#!/bin/bash
+
+
 #################################################### STEP 1
 # Add for linux - in file (folder_add.py)
 #!/usr/bin/python3 

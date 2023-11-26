@@ -8,7 +8,7 @@ background_layout = [[sg.Image(r'pic_front.png')]]
 layout = [
     [sg.Text("Название проекта:"), sg.Input(k='expr')],
     [sg.Text("        Выбор папки:"), sg.In(enable_events=True, key='-FOLDER-'), sg.FolderBrowse()],
-    [sg.Button('Cоздать', size=(55, 1))],
+    [sg.Button('Create', size=(55, 1))],
     [sg.Text("Выбор папок под ваш проект:")],
     [sg.Checkbox('Creds', default=True, key="-CREDS-"),
      sg.Checkbox('DataBases', default=True, key="-DATABASES-"),
@@ -17,9 +17,9 @@ layout = [
      sg.Checkbox('K8s', default=False, key="-K8S-"),
      sg.Checkbox('Monitorings', default=True, key="-MONITORINGS-"),
      sg.Checkbox('Repository', default=True, key="-REPOSITORY-"),
-     sg.Checkbox('Description', default=True, key="-DESCRIPTION-"),
-    #  sg.Checkbox('Images', default=False, key="-IMAGES-"),
-    #  sg.Checkbox('Videos', default=False, key="-VIDEOS-"),
+     sg.Checkbox('Description', default=False, key="-DESCRIPTION-"),
+     sg.Checkbox('Video_rec', default=False, key="-VIDEOS-"),
+     sg.Checkbox('Notes', default=True, key="-NOTES-"),
     ],
 ]
 
@@ -32,7 +32,7 @@ while True:
     event, values = window.read()
     print(event, values)
 
-    if event == 'Cоздать' or event == "expr_Enter":
+    if event == 'Create' or event == "expr_Enter":
         name_proj = values['expr']  # Извлекли название проекта
         print(name_proj)
         fld = values['-FOLDER-']  # Получаем информацию с блока выбора папки

@@ -68,17 +68,11 @@ def add_folder_in_project(main_folder_name, values):
 
         create_dir(root_path + "Creds/instance_keys")
 
-    # if values["-IMAGES-"] == True:
-    #     create_dir(root_path + "Images")
-    #     create_dir(root_path + "Images/Diagrams")
-    #     create_dir(root_path + "Images/Screens")
-    #     create_dir(root_path + "Images/Other")
 
-    # if values["-VIDEOS-"] == True:
-    #     create_dir(root_path + "Videos")
-    #     create_dir(root_path + "Videos/Backend_side")
-    #     create_dir(root_path + "Videos/Front_end_side")
-    #     create_dir(root_path + "Videos/Other")
+
+    if values["-VIDEOS-"] == True:
+        create_dir(root_path + "Video_records")
+
 
     if values["-K8S-"] == True:
         create_dir(root_path + "K8s")
@@ -89,16 +83,10 @@ def add_folder_in_project(main_folder_name, values):
 
     if values["-TERRAFORM-"] == True:
         create_dir(root_path + "Terraform")
-        create_dir(root_path + "Terraform/Terraform_Polygon")
-        create_dir(root_path + "Terraform/Terraform_Work_Version")
-        create_dir(root_path + "Terraform/Terragrunt")
 
-
-        with open("Text_hints_files/Terraform_commands.txt", "r") as f:
-            content = f.read()
-
-        with open(root_path + "Terraform/"  + "Terraform_commands.txt", "w") as f:
-            f.write(content)
+        source_directory = './Files/Terraform/'
+        destination_directory = root_path + "Terraform/"
+        add_project_files(source_directory, destination_directory)
 
     if values["-ANSIBLE-"] == True:
         create_dir(root_path + "Ansible")
@@ -202,6 +190,12 @@ def add_folder_in_project(main_folder_name, values):
         f.write(f"{formatted_date}\n")
         f.close()
 
+    if values["-NOTES-"] == True:
+        create_dir(root_path + "NOTES")
+        f = open(root_path + "Notes.txt", "x")
+        f.write("My notes:\n\n")
+        f.write(f"{formatted_date}\n")
+        f.close()
 
     if platform.system() == "Windows":
         winshell.CreateShortcut(
