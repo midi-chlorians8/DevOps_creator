@@ -64,7 +64,7 @@ runnerRegistrationToken: "YOUR_DATA"
 ## be retrieved CI_SERVER_URLfrom your GitLab Instance. It is token of already registered runner.
 ## ref: (we don't yet have docs for that, but we want to use existing token)
 ##
-# runnerToken: "glpat-AXXsLgKQQ4_HkDge9YEx"
+
 #
 
 ## Unregister all runners before termination
