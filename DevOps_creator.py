@@ -1,9 +1,22 @@
 from folder_add import *
 import PySimpleGUI as sg
+import sys
+import os
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
 
 sg.theme('DarkGrey13')   # Keep things interesting for your users
 
-background_layout = [[sg.Image(r'pic_front.png')]]
+background_layout = [[sg.Image(resource_path(r'pic_front.png'))]]
 
 layout = [
     [sg.Text("Название проекта:"), sg.Input(k='expr')],
